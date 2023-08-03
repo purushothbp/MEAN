@@ -1,0 +1,22 @@
+/* .tableStyles,thead,tbody{
+    border: 1.5px solid #000000;
+    border-collapse: collapse;
+    padding: 1rem;
+    margin: 1rem;
+    text-align: center;
+} */
+
+/* .tableStyles {
+    border-collapse: collapse;
+    width: 100%;
+  } */
+  
+  .tableStyles th,thead,tbody,tr,td {
+    border: 1px solid #0f0f0f;
+    padding: 8px;
+    border-collapse: collapse;
+    text-align: left;
+  }
+  .tableStyles th {
+    background-color: #979292;
+  }
