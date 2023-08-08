@@ -1,41 +1,45 @@
 import './CourseList.css';
 import { Link } from 'react-router-dom';
-import data from '../courses.json';
+import data from '../courses-cost.json';
+// import DeleteIcon from'@mui/material/'
 import { useEffect, useState } from 'react';
 
 const CourseList = () => {
-    const [coursesData , setcoursesData] = useState([])
+    const [courseData , setcourseData] = useState([])
     useEffect(()=>{
-        setcoursesData(data)
+        setcourseData(data)
     },[])
-    const coursesDataDelete=(id, index)=>{
+    const courseDataDelete=(id, index)=>{
            console.log(id)
-    const filterData = [...coursesData]
+    const filterData = [...courseData]
         filterData.splice(index,1);
-        setcoursesData(filterData)
+        setcourseData(filterData)
+        // {<DeleteIcon/>}
     }
     return (
         <div>
             <Link to={'/create'}> <button>Create</button></Link>
             <table className='tableStyles'>
-                <thead>
+                 <thead>
                     <tr>
                         <th>S.No</th>
-                        <th>CourseTitle</th>
-                        <th>CourseCategory</th>
-                        <th>CourseDescription</th>
+                        <th>Course Title</th>
+                        <th>Course Category</th>
+                        <th>Course Description</th>
+                        <th>Course Price</th>
                         <th>Action</th>
                     </tr>
                 </thead>
                 <tbody>
                       {
-                        coursesData.map((value,index)=>(
+                        courseData.map((value,index)=>(
                             <tr key={value._id}>
                                 <td>{index + 1}</td>
-                                <td>{ value.courseTitle}</td>
+                                <td>{value.courseTitle}</td>
                                 <td>{value.courseCategory }</td>
-                                <td>{ value.courseDescription}</td>
-                                <td><button onClick={()=>coursesDataDelete(value._id, index)}>Delete</button></td>
+                                <td>{value.courseDescription}</td>
+                                <td>{value.balance}</td>
+                                <td><button onClick={()=>courseDataDelete(value._id, index)}>Delete</button></td>
                             </tr>
                             ))
                       }
