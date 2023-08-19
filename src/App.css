@@ -1,0 +1,9 @@
+.tableStyles th, thead, tbody,tr,td{
+  border: 1px solid black;
+  padding: 4px;
+  border-collapse: collapse;
+  text-align: right;
+}
+.tableStyles th{
+  background-color: #797777;
+}
